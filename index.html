@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Phung - Personal Portfolio</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#about" class="logo">Andrew Phung - Personal Portfolio</a>
+                <nav class="nav">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h1 class="section-title">👋 About Me</h1>
+            <div class="about-content">
+                <div class="about-gallery">
+                    <div class="gallery-container">
+                        <div class="gallery-track">
+                            <img src="images/portrait.jpg" alt="Professional portrait" class="gallery-img">
+                            <img src="images/about-1.jpg" alt="About me image 1" class="gallery-img">
+                            <img src="images/about-2.jpg" alt="About me image 2" class="gallery-img">
+                            <img src="images/about-3.jpg" alt="About me image 3" class="gallery-img">
+                            <img src="images/about-4.jpg" alt="About me image 4" class="gallery-img">
+                            <img src="images/about-5.jpg" alt="About me image 5" class="gallery-img">
+                            <!-- Add more images here by copying the line above and changing the src and alt -->
+                            <!-- Example: <img src="images/about-2.jpg" alt="About me image 2" class="gallery-img"> -->
+                        </div>
+                    </div>
+                    <button class="gallery-nav prev-btn" aria-label="Previous image">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="gallery-nav next-btn" aria-label="Next image">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="photo-counter">
+                        <span class="current-photo">1</span> / <span class="total-photos">3</span> photos
+                    </div>
+                </div>
+                <div class="about-text">
+                    <div class="bio-text">
+                        <p>I'm Andrew Phung, a senior at UC Berkeley studying Mechanical Engineering with a minor in EECS, and I'm obsessed with building systems that span hardware, firmware, and software. I like taking ideas from a sketch on a whiteboard to something that actually moves, measures, or responds in the real world—designing the mechanisms, wiring up the electronics, writing the embedded code, and shaping the user experience on top.</p>
+                        <p>Because I've worked across the full stack—from CAD and manufacturing constraints to sensor integration, motor control, data pipelines, and front-end interfaces—I tend to think in terms of complete systems instead of isolated parts. I care about things that are technically solid and feel thoughtful and intuitive to use. When I'm not in lab or buried in code, I'm usually at the gym, tinkering with new builds, or helping friends debug their projects. This portfolio is a snapshot of what I've been learning and building along the way.</p>
+                    </div>
+                    <button class="cta-button">
+                        <span>View My Work</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-column">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/>
+                                <path d="m2 22 3-3"/>
+                                <path d="M7.5 13.5 10 11"/>
+                                <path d="M10.5 16.5 13 14"/>
+                                <path d="m18 3-4 4h6l-4 4"/>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Electrical & Firmware</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Embedded C/C++</li>
+                        <li>MicroPython</li>
+                        <li>ESP32, Arduino</li>
+                        <li>Sensors & Actuators Integration </li>
+                        <li>Motor Control & Encoders</li>
+                    </ul>
+                </div>
+                <div class="skill-column">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Mechanical Design</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>CAD Software (CATIA, SolidWorks, Onshape)</li>
+                        <li>Mechanism Design</li>
+                        <li>3D Printing & Rapid Prototyping</li>
+                        <li>GD&T</li>
+                        <li>Machine Shop Tools</li>
+                        <li>Process Engineering</li>
+                        <li>FEA Analysis</li>
+                        <li>CNC Machining</li>
+                    </ul>
+                </div>
+                <div class="skill-column">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 13a3 3 0 1 1 2.83-4H14a2 2 0 0 1 0 4z"/>
+                                <path d="M12 17v4"/>
+                                <path d="M8 21h8"/>
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Software & Tools</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Python, Java, C/C++, SQL</li>
+                        <li>MATLAB / Simulink</li>
+                        <li>Git</li>
+                        <li>Jira / Confluence / Trello</li>
+                        <li>Miro</li>
+                        <li>API Integration</li>
+                        <li>Mircrosoft Suite (Word, Excel, PowerPoint)</li>
+                        <li>Figma, Cursor, PowerBI</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="projects-intro">A selection of projects showcasing the integration of mechanical design, electrical engineering, and software development.</p>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="mechanical">Mechanical Work</button>
+                <button class="filter-btn" data-filter="product">Product Work</button>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="mechanical">
+                    <div class="project-gallery">
+                        <div class="gallery-container">
+                            <div class="gallery-track">
+                                <img src="images/projects/chess-1.jpg" alt="Automated Chess Board - CAD Design 1" class="gallery-img">
+                                <img src="images/projects/chess-2.jpg" alt="Automated Chess Board - CAD Design 2" class="gallery-img">
+                                <img src="images/projects/chess-3.jpg" alt="Automated Chess Board - CAD Design 3" class="gallery-img">
+                                <img src="images/projects/chess-4.jpg" alt="Automated Chess Board - Current Progress" class="gallery-img">
+                                <img src="images/projects/chess-5.jpg" alt="Automated Chess Board - Current Progress 2" class="gallery-img">
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev-btn" aria-label="Previous image">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="gallery-nav next-btn" aria-label="Next image">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="photo-counter">
+                            <span class="current-photo">1</span> / <span class="total-photos">2</span> photos
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Automated Chess Board (In Progress)</h3>
+                        <p class="project-subtitle">Physical Chessboard with Encoder-Driven Piece Movement</p>
+                        <div class="project-tags">
+                            <span class="tag">Mechanism Design (Gears, Linkages)</span>
+                            <span class="tag">ESP32</span>
+                            <span class="tag">Arduino</span>
+                            <span class="tag">C/C++</span>
+                            <span class="tag">Web App Integration</span>
+                        </div>
+                        <p class="project-description">Designing and building a voice-controlled smart chessboard that autonomously moves pieces to their target squares. Currently engineering an under-board motion system using DC motors, belt drive, encoders, and magnets to accurately position any piece on the 8×8 grid. Developing ESP32 firmware in C++ for homing, path planning, and closed-loop motor control, and integrating an I2S microphone with cloud speech-to-text so spoken commands like “knight to F3” are translated into precise, reliable movements.</p>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/file/d/1k6XMG0lSPEkgvQlzWSpwt1UMdWVrm9sW/view?usp=sharing" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2v4"/>
+                                    <path d="m16.2 7.8 2.9-2.9"/>
+                                    <path d="M18 12h4"/>
+                                    <path d="m16.2 16.2 2.9 2.9"/>
+                                    <path d="M12 18v4"/>
+                                    <path d="m4.9 19.1 2.9-2.9"/>
+                                    <path d="M2 12h4"/>
+                                    <path d="m4.9 4.9 2.9 2.9"/>
+                                </svg>
+                                <span>View Current Progress</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="product">
+                    <div class="project-gallery">
+                        <div class="gallery-container">
+                            <div class="gallery-track">
+                                <div class="gallery-video-embed">
+                                    <iframe 
+                                        width="100%" 
+                                        height="100%" 
+                                        src="https://www.youtube.com/embed/uHkEYeFivfU" 
+                                        title="FinSight Demo Video" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev-btn" aria-label="Previous image" style="display: none;">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="gallery-nav next-btn" aria-label="Next image" style="display: none;">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="photo-counter" style="display: none;">
+                            <span class="current-photo">1</span> / <span class="total-photos">1</span> photos
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">FinSight</h3>
+                        <p class="project-subtitle">Learn More About Public Companies with AI! (Beta Version)</p>
+                        <div class="project-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">User Interviews</span>
+                            <span class="tag">PRD</span>
+                            <span class="tag">MVP Prototyping</span>
+                            <span class="tag">Cursor</span>
+                            <span class="tag">Grok API Integration</span>
+                            <span class="tag">LLM-Powered Insights</span>
+                            <span class="tag">Data Visualization</span>
+                        </div>
+                        <p class="project-description">Designed and built an AI-powered analytics platform (using LLMs & APIs) that turns SEC filings into digestible data visualizations and actionable portfolio insights for retail investors. Prototyped user flows in Figma and implemented a React/TypeScript frontend with dashboards for fundamentals, trends, and risk flags. Developed a Python backend that ingests 10-Ks, 10-Qs, and transcripts, calls LLM APIs for summarization, and surfaces company- and portfolio-level insights in seconds.</p>
+                        <div class="project-links">
+                            <a href="https://youtu.be/uHkEYeFivfU" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/>
+                                    <path d="m6.2 5.3 3.1 3.9"/>
+                                    <path d="m12.4 3.4 3.1 4"/>
+                                    <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>
+                                </svg>
+                                <span>Live Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="mechanical">
+                    <div class="project-gallery">
+                        <div class="gallery-container">
+                            <div class="gallery-track">
+                                <img src="images/projects/iot-1.jpg" alt="Smart IoT Plant Monitor - Image 1" class="gallery-img">
+                                <img src="images/projects/iot-2.jpg" alt="Smart IoT Plant Monitor - Image 2" class="gallery-img">
+                                <img src="images/projects/iot-3.jpg" alt="Smart IoT Plant Monitor - Image 3" class="gallery-img">
+                                <img src="images/projects/iot-4.jpg" alt="Smart IoT Plant Monitor - Image 4" class="gallery-img">
+                                <div class="gallery-slides-embed">
+                                    <iframe 
+                                        src="https://www.canva.com/design/DAG5v7znN3Q/view?embed" 
+                                        allowfullscreen="allowfullscreen" 
+                                        allow="fullscreen"
+                                        style="width: 100%; height: 100%; border: none;">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev-btn" aria-label="Previous image">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="gallery-nav next-btn" aria-label="Next image">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="photo-counter">
+                            <span class="current-photo">1</span> / <span class="total-photos">5</span> photos
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Smart IoT Plant Monitor</h3>
+                        <p class="project-subtitle">Keep Your Plants Alive with Real-Time Monitoring!</p>
+                        <div class="project-tags">
+                            <span class="tag">ESP32 & Embedded Systems</span>
+                            <span class="tag">MicroPython</span>
+                            <span class="tag">Sensors Integration</span>
+                            <span class="tag">Actuators Integration </span>
+                            <span class="tag">IoT Integration</span>
+                        </div>
+                        <p class="project-description">Designed and built an ESP32-based IoT plant watering system that automatically irrigates a plant based on real-time soil conditions. Integrated a soil moisture sensor, DHT11 temperature/humidity sensor, and a relay-driven mini water pump so watering only triggers below a calibrated moisture threshold, with MicroPython firmware handling filtering, control logic, and safety timeouts. Over Wi-Fi, the ESP32 connects to a cloud email service to notify users when the plant is watered, and a 16×2 I²C LCD displays live moisture, ambient conditions, and pump status as a simple “plant health dashboard.” This project strengthened my experience with ESP32, IoT connectivity, and end-to-end sensor/actuator integration.</p>
+                        <div class="project-links">
+                            <a href="https://youtu.be/UQytxJHxKEE" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/>
+                                    <path d="m6.2 5.3 3.1 3.9"/>
+                                    <path d="m12.4 3.4 3.1 4"/>
+                                    <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>
+                                </svg>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="https://www.canva.com/design/DAG5v7znN3Q/uEShLAZq9JObCNG-P5gSqg/edit?utm_content=DAG5v7znN3Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16"/>
+                                    <path d="M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2"/>
+                                    <circle cx="13" cy="7" r="1" fill="currentColor"/>
+                                    <rect x="8" y="2" width="14" height="14" rx="2"/>
+                                </svg>
+                                <span>View Slides</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="mechanical">
+                    <div class="project-gallery">
+                        <div class="gallery-container">
+                            <div class="gallery-track">
+                                <img src="images/projects/scooter-slide-1.png" alt="Scooter Cup Clamp Holder - Slide 1" class="gallery-img" loading="eager">
+                                <img src="images/projects/scooter-slide-2.png" alt="Scooter Cup Clamp Holder - Slide 2" class="gallery-img" loading="eager">
+                                <img src="images/projects/scooter-slide-3.png" alt="Scooter Cup Clamp Holder - Slide 3" class="gallery-img">
+                                <img src="images/projects/scooter-slide-4.png" alt="Scooter Cup Clamp Holder - Slide 4" class="gallery-img">
+                                <img src="images/projects/scooter-slide-5.png" alt="Scooter Cup Clamp Holder - Slide 5" class="gallery-img">
+                                <img src="images/projects/scooter-slide-6.png" alt="Scooter Cup Clamp Holder - Slide 6" class="gallery-img">
+                                <img src="images/projects/scooter-slide-7.png" alt="Scooter Cup Clamp Holder - Slide 7" class="gallery-img">
+                                <img src="images/projects/scooter-slide-8.png" alt="Scooter Cup Clamp Holder - Slide 8" class="gallery-img">
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev-btn" aria-label="Previous image">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="gallery-nav next-btn" aria-label="Next image">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="photo-counter">
+                            <span class="current-photo">1</span> / <span class="total-photos">8</span> photos
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Scooter Cup Clamp Holder</h3>
+                        <p class="project-subtitle">Bring Your Drinks Anywhere Across Campus!</p>
+                        <div class="project-tags">
+                            <span class="tag">CAD & Product Design</span>
+                            <span class="tag">GD&T</span>
+                            <span class="tag">3D Printing</span>
+                            <span class="tag">Rapid Prototyping</span>
+                        </div>
+                        <p class="project-description">Designed and prototyped a clamp-based cup holder attachment for scooters that securely mounts to handlebars without requiring permanent modifications. Used CAD software to model the clamp mechanism with adjustable tension, ensuring compatibility across different scooter handlebar diameters. Prototyped multiple iterations using 3D printing to test fit, ergonomics, and structural integrity. The final design features a quick-release mechanism for easy installation and removal, with a stable cup holder that accommodates various cup sizes.</p>
+                        <div class="project-links">
+                            <a href="images/projects/scooter-slides.pdf" class="project-link" target="_blank" rel="noopener noreferrer" download="scooter-cup-clamp-holder-slides.pdf">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16"/>
+                                    <path d="M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2"/>
+                                    <circle cx="13" cy="7" r="1" fill="currentColor"/>
+                                    <rect x="8" y="2" width="14" height="14" rx="2"/>
+                                </svg>
+                                <span>View Slides</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <div class="footer-email">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.5 5L10 10L17.5 5M3.75 15H16.25C16.913 15 17.5489 14.7366 18.0178 14.2678C18.4866 13.7989 18.75 13.163 18.75 12.5V7.5C18.75 6.83696 18.4866 6.20107 18.0178 5.73223C17.5489 5.26339 16.913 5 16.25 5H3.75C3.08696 5 2.45107 5.26339 1.98223 5.73223C1.51339 6.20107 1.25 6.83696 1.25 7.5V12.5C1.25 13.163 1.51339 13.7989 1.98223 14.2678C2.45107 14.7366 3.08696 15 3.75 15Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <a href="mailto:andrewphung@berkeley.edu">andrewphung@berkeley.edu</a>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://github.com/andrewphung1" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 17.5C3.75 18.75 3.75 15.625 2.5 15M12.5 17.5V15C12.5 14.0054 12.1049 13.0516 11.4016 12.3483C10.6983 11.6451 9.74456 11.25 8.75 11.25H6.25C5.25544 11.25 4.30161 11.6451 3.59835 12.3483C2.89509 13.0516 2.5 14.0054 2.5 15M12.5 17.5C16.25 18.75 16.25 15.625 17.5 15M12.5 17.5V15.625C12.5 14.6304 12.8951 13.6766 13.5983 12.9733C14.3016 12.2701 15.2554 11.875 16.25 11.875H18.75C19.7446 11.875 20.6984 12.2701 21.4017 12.9733C22.1049 13.6766 22.5 14.6304 22.5 15.625V17.5M10 2.5C8.067 2.5 6.5 4.067 6.5 6C6.5 7.933 8.067 9.5 10 9.5C11.933 9.5 13.5 7.933 13.5 6C13.5 4.067 11.933 2.5 10 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/andrewphung1/" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.75 6.25C15.1307 6.25 16.4545 6.79732 17.4107 7.75347C18.3669 8.70962 18.9143 10.0334 18.9143 11.4141V17.5H15.4143V11.4141C15.4143 10.8887 15.2046 10.3848 14.8295 10.0097C14.4544 9.63459 13.9505 9.4248 13.425 9.4248C12.8995 9.4248 12.3956 9.63459 12.0205 10.0097C11.6454 10.3848 11.4356 10.8887 11.4356 11.4141V17.5H7.93564V11.4141C7.93564 10.0334 8.48296 8.70962 9.43911 7.75347C10.3953 6.79732 11.719 6.25 13.0998 6.25H13.75Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4.16436 17.5H7.66436V9.375H4.16436V17.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5.91436 6.25C6.74479 6.25 7.41436 5.58043 7.41436 4.75C7.41436 3.91957 6.74479 3.25 5.91436 3.25C5.08393 3.25 4.41436 3.91957 4.41436 4.75C4.41436 5.58043 5.08393 6.25 5.91436 6.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                <p class="footer-copyright">© 2025 Andrew Phung. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
