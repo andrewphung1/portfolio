@@ -321,3 +321,30 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// About gallery vertical alignment helper
+const updateAboutGalleryAlignment = () => {
+    const gallery = document.querySelector('.about-gallery');
+    const aboutText = document.querySelector('.about-text');
+    const bioText = document.querySelector('.bio-text');
+
+    if (!gallery || !aboutText || !bioText) return;
+
+    const isMobile = window.matchMedia('(max-width: 968px)').matches;
+    if (isMobile) {
+        gallery.style.setProperty('--about-gallery-offset', '0px');
+        return;
+    }
+
+    const extraHeight = aboutText.offsetHeight - bioText.offsetHeight;
+    const offset = extraHeight > 0 ? -(extraHeight / 2) : 0;
+    gallery.style.setProperty('--about-gallery-offset', `${offset}px`);
+};
+
+window.addEventListener('load', () => {
+    updateAboutGalleryAlignment();
+});
+
+window.addEventListener('resize', () => {
+    requestAnimationFrame(updateAboutGalleryAlignment);
+});
+
