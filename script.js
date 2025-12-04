@@ -100,23 +100,23 @@ document.querySelectorAll('.project-gallery, .about-gallery').forEach(gallery =>
     let checkComplete = false;
     
     const checkAndUpdateGallery = () => {
-        // Count only images that loaded successfully
-        const validCount = loadedImages.length;
+        // Count all images in DOM (they'll load when scrolled to)
+        const totalCount = images.length;
         
-        if (validCount <= 1) {
+        // Hide images that failed to load
+        images.forEach((img, index) => {
+            // Only hide if image has errored (not just not loaded yet)
+            if (img.dataset.error === 'true') {
+                img.style.display = 'none';
+            }
+        });
+        
+        if (totalCount <= 1) {
             // Hide navigation and counter for single or no images
             if (prevBtn) prevBtn.style.display = 'none';
             if (nextBtn) nextBtn.style.display = 'none';
             if (counter) counter.style.display = 'none';
-            
-            // Remove images that failed to load from DOM
-            images.forEach((img, index) => {
-                if (!loadedImages.includes(index)) {
-                    img.style.display = 'none';
-                }
-            });
-            
-            if (validCount <= 1) return;
+            return;
         }
         
         // Show navigation and counter for multiple images
@@ -125,12 +125,12 @@ document.querySelectorAll('.project-gallery, .about-gallery').forEach(gallery =>
         if (counter) {
             counter.style.display = 'block';
             const totalPhotos = counter.querySelector('.total-photos');
-            if (totalPhotos) totalPhotos.textContent = validCount;
+            if (totalPhotos) totalPhotos.textContent = totalCount;
         }
         
-        // Set up navigation only if we have multiple images
-        if (validCount > 1 && !checkComplete) {
-            setupNavigation(validCount);
+        // Set up navigation only once
+        if (!checkComplete) {
+            setupNavigation(totalCount);
             checkComplete = true;
         }
     };
@@ -147,8 +147,6 @@ document.querySelectorAll('.project-gallery, .about-gallery').forEach(gallery =>
         };
 
         const scrollToImage = (index) => {
-            // Get the actual DOM index of the image we want to show
-            const targetDomIndex = loadedImages[index];
             // Ensure track width is calculated
             const imageWidth = track.offsetWidth || track.clientWidth;
             if (imageWidth === 0) {
@@ -156,19 +154,24 @@ document.querySelectorAll('.project-gallery, .about-gallery').forEach(gallery =>
                 setTimeout(() => scrollToImage(index), 50);
                 return;
             }
-            // Calculate scroll position: count only visible images before this one
-            let visibleCount = 0;
-            for (let i = 0; i < targetDomIndex; i++) {
-                if (images[i] && images[i].offsetWidth > 0 && images[i].style.display !== 'none') {
-                    visibleCount++;
-                }
-            }
+            
+            // Since all images are in order in the DOM and each takes 100% width,
+            // we can directly calculate scroll position: index * imageWidth
+            const scrollPosition = index * imageWidth;
+            
+            // Set flag to prevent scroll event from interfering
+            isScrollingProgrammatically = true;
             track.scrollTo({
-                left: visibleCount * imageWidth,
+                left: scrollPosition,
                 behavior: 'smooth'
             });
             currentIndex = index;
             updateCounter();
+            
+            // Reset flag after scroll completes
+            setTimeout(() => {
+                isScrollingProgrammatically = false;
+            }, 500); // Smooth scroll typically takes ~300-400ms
         };
 
         if (prevBtn) {
@@ -191,17 +194,32 @@ document.querySelectorAll('.project-gallery, .about-gallery').forEach(gallery =>
             });
         }
 
-        // Update counter on scroll
+        // Update counter on scroll with debouncing
+        let scrollTimeout;
+        let isScrollingProgrammatically = false;
+        
         track.addEventListener('scroll', () => {
-            const imageWidth = track.offsetWidth;
-            if (imageWidth === 0) return; // Track not ready yet
-            const scrollIndex = Math.round(track.scrollLeft / imageWidth);
-            // Find which loaded image corresponds to this scroll position
-            const foundIndex = loadedImages.indexOf(scrollIndex);
-            if (foundIndex !== -1 && foundIndex !== currentIndex) {
-                currentIndex = foundIndex;
-                updateCounter();
-            }
+            // Ignore scroll events during programmatic scrolling
+            if (isScrollingProgrammatically) return;
+            
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                const imageWidth = track.offsetWidth;
+                if (imageWidth === 0) return; // Track not ready yet
+                
+                // Calculate which image is currently visible based on scroll position
+                // Since images are in order and each is 100% width, this is straightforward
+                const scrollPosition = track.scrollLeft;
+                const newIndex = Math.round(scrollPosition / imageWidth);
+                
+                // Clamp to valid range
+                const clampedIndex = Math.max(0, Math.min(newIndex, imageCount - 1));
+                
+                if (clampedIndex !== currentIndex) {
+                    currentIndex = clampedIndex;
+                    updateCounter();
+                }
+            }, 50); // Debounce scroll events
         });
 
         // Initialize counter
@@ -230,7 +248,8 @@ document.querySelectorAll('.project-gallery, .about-gallery').forEach(gallery =>
             });
             
             img.addEventListener('error', () => {
-                // Image failed to load, hide it
+                // Image failed to load, mark it and hide it
+                img.dataset.error = 'true';
                 img.style.display = 'none';
                 checkAndUpdateGallery();
             });
