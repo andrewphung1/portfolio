@@ -100,9 +100,6 @@ document.querySelectorAll('.project-gallery, .about-gallery').forEach(gallery =>
     let checkComplete = false;
     
     const checkAndUpdateGallery = () => {
-        // Count all images in DOM (they'll load when scrolled to)
-        const totalCount = images.length;
-        
         // Hide images that failed to load
         images.forEach((img, index) => {
             // Only hide if image has errored (not just not loaded yet)
@@ -110,6 +107,12 @@ document.querySelectorAll('.project-gallery, .about-gallery').forEach(gallery =>
                 img.style.display = 'none';
             }
         });
+        
+        // Count only visible images (not hidden with display: none)
+        const visibleImages = Array.from(images).filter(img => 
+            img.style.display !== 'none' && img.dataset.error !== 'true'
+        );
+        const totalCount = visibleImages.length;
         
         if (totalCount <= 1) {
             // Hide navigation and counter for single or no images
