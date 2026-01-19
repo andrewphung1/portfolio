@@ -94,6 +94,8 @@ document.querySelectorAll('.project-gallery, .about-gallery').forEach(gallery =>
     const nextBtn = gallery.querySelector('.next-btn');
     const counter = gallery.querySelector('.photo-counter');
     const images = gallery.querySelectorAll('.gallery-img');
+    const videos = gallery.querySelectorAll('.gallery-video, .gallery-video-embed');
+
     
     // Track which images actually loaded successfully
     const loadedImages = [];
@@ -112,7 +114,11 @@ document.querySelectorAll('.project-gallery, .about-gallery').forEach(gallery =>
         const visibleImages = Array.from(images).filter(img => 
             img.style.display !== 'none' && img.dataset.error !== 'true'
         );
-        const totalCount = visibleImages.length;
+        // Count videos (they're always visible if in DOM)
+        const visibleVideos = Array.from(videos).filter(video => 
+            video.style.display !== 'none'
+        );
+        const totalCount = visibleImages.length + visibleVideos.length;
         
         if (totalCount <= 1) {
             // Hide navigation and counter for single or no images
@@ -369,4 +375,3 @@ window.addEventListener('load', () => {
 window.addEventListener('resize', () => {
     requestAnimationFrame(updateAboutGalleryAlignment);
 });
-
